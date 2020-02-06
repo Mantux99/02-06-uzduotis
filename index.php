@@ -18,7 +18,55 @@ include_once './app/php/php.php'
 	<title>Hello, world!</title>
 </head>
 <body>
+	<form method="GET">
+		<section class="container mt-5">
+		<div class="form-row d-flex justify-content-center">
+			<div class="form-group col-md-2">
+				<label for="inputname">Vardas</label>
+				<input type="text" class="form-control" id="inputname" name="name">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputyears">Amzius</label>
+				<input type="text" class="form-control" id="inputyears" name="year">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputcity">Miestas</label>
+				<input type="text" class="form-control" id="inputcity" name="city">
+			</div>
+			<div class="form-group col-md-2">
+				<label for="inputcountry">Salis</label>
+				<input type="text" class="form-control" id="inputcountry" name="country">
+			</div>
+			<button type="submit" class="btn">Sign in</button>
+		</div>
 
+		<table class="table">
+		<thead>
+		<?php foreach ($_GET as $key => $value):?>
+		<th>
+			<?php print $key; ?>
+			
+		</th>
+		<?php endforeach; ?>
+		</thead>
+
+		<tr>
+		<?php foreach ($_GET as $value):?>
+
+			<td><?php 
+			if (!empty($value)) {
+				print $value;
+			}	?></td>
+			<?php endforeach; ?>
+		</tr>
+	
+
+		
+		</table>
+
+		</section>
+
+	</form>
 
 
  	<!-- Optional JavaScript -->
